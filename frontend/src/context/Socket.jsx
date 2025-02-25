@@ -11,7 +11,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (authUser?.user?._id) { 
-            const newSocket = io("https://waguan-genz.onrender.com", {
+            const newSocket = io("https://waguan-genz.onrender.com/", {
                 query: { userId: authUser.user._id },
             });
             setSocket(newSocket);

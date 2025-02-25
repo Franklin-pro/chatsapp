@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import GenderCheckbox from "./GenderCheckbox";
 import { useState } from "react";
 import useSignup from "../../hooks/useSignup";
+import  signupimage  from "../../assets/login.jpg";
 
 const SignUp = () => {
 	const [inputs, setInputs] = useState({
@@ -24,21 +25,25 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-			<div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-				<h1 className='text-3xl font-semibold text-center text-gray-300'>
-					Sign Up <span className='text-blue-500'> ChatApp</span>
-				</h1>
+		<>
+		<section className="">
+				{/* login container */}
 
-				<form onSubmit={handleSubmit}>
+				<div className="bg-gray-50 shadow-lg flex gap-4 rounded-2xl max-w-3xl h-[550px] p-5">
+					{/* form */}
+					<div className="sm:w-1/2">
+						<h2 className="font-bold text-2xl text-gray-700">Sign Up</h2>
+						<p className="text-sm font-light my-2 text-gray-500">If You Are Not A Member ,Easily Sign Up</p>
+
+						<form onSubmit={handleSubmit}>
 					<div>
 						<label className='label p-2'>
-							<span className='text-base label-text'>Full Name</span>
+							<span className='text-base label-text text-gray-500'>Full Name</span>
 						</label>
 						<input
 							type='text'
 							placeholder='John Doe'
-							className='w-full input input-bordered  h-10'
+							className='w-full bg-white input text-black input-bordered h-10'
 							value={inputs.fullName}
 							onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
 						/>
@@ -46,12 +51,12 @@ const SignUp = () => {
 
 					<div>
 						<label className='label p-2 '>
-							<span className='text-base label-text'>Username</span>
+							<span className='text-base label-text text-gray-500'>Username</span>
 						</label>
 						<input
 							type='text'
 							placeholder='johndoe'
-							className='w-full input input-bordered h-10'
+							className='w-full bg-white input text-black input-bordered h-10'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 						/>
@@ -59,12 +64,12 @@ const SignUp = () => {
 
 					<div>
 						<label className='label'>
-							<span className='text-base label-text'>Password</span>
+							<span className='text-base label-text text-gray-500'>Password</span>
 						</label>
 						<input
 							type='password'
 							placeholder='Enter Password'
-							className='w-full input input-bordered h-10'
+							className='w-full bg-white input text-black input-bordered h-10'
 							value={inputs.password}
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 						/>
@@ -72,12 +77,12 @@ const SignUp = () => {
 
 					<div>
 						<label className='label'>
-							<span className='text-base label-text'>Confirm Password</span>
+							<span className='text-base label-text text-gray-500'>Confirm Password</span>
 						</label>
 						<input
 							type='password'
 							placeholder='Confirm Password'
-							className='w-full input input-bordered h-10'
+							className='w-full bg-white input text-black input-bordered h-10'
 							value={inputs.confirmPassword}
 							onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
 						/>
@@ -87,7 +92,7 @@ const SignUp = () => {
 
 					<Link
 						to={"/login"}
-						className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'
+						className='text-sm hover:underline text-gray-500 hover:text-blue-600 mt-2 inline-block'
 						href='#'
 					>
 						Already have an account?
@@ -99,8 +104,17 @@ const SignUp = () => {
 						</button>
 					</div>
 				</form>
-			</div>
-		</div>
+					</div>
+					{/* image */}
+					<div className="sm:block hidden w-1/2 h-full">
+						<img className="rounded-2xl  h-full object-cover" src={signupimage} alt="image" />
+					</div>
+				</div>
+			</section>
+		
+		
+		</>
+		
 	);
 };
 export default SignUp;

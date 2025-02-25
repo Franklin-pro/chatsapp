@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "server": "node backend/server.js",
+    "server": "nodemon backend/server.js",
     "start": "node backend/server.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -16,6 +16,7 @@
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "framer-motion": "^12.4.7",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "socket.io": "^4.8.1"
